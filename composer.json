@@ -1,0 +1,15 @@
+{
+    "name": "agentextra/app",
+    "description": "Application AgentExtra",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "phpmailer/phpmailer": "^6.8",
+        "phpoffice/phpspreadsheet": "^4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    }
+}

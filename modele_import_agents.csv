@@ -1,0 +1,12 @@
+# Format des champs : Matricule (généré auto), Nom (texte), Prénom (texte), Email (valide), Téléphone (10 chiffres), Adresse (texte), Ville (liste), Service (existant), Niveau Scolaire (primaire/college/lycee/bac/bac_plus_1/.._5), Domaine études (liste), Expérience (années), Langues (séparées par ;), Permis (A/B/C/D/BE/NONE), Date Permis (YYYY-MM-DD), Date Recrutement (YYYY-MM-DD), Taille (m.cc), Poids (kg), Statut Militaire (civil/ex_militaire)
+Matricule,Nom,Prénom,Email,Téléphone,Adresse,Ville,Service,Niveau Scolaire,Domaine d'études,Années d'expérience,Langues,Type Permis,Date Permis,Date Recrutement,Taille,Poids,Statut Militaire
+A00001,Alami,Mohammed,mohammed.alami@example.com,0600000000,123 Rue de la Paix,Casablanca,Gardiennage,bac_plus_2,securite,5,francais;arabe;anglais,B,2020-01-01,2023-01-01,1.75,75,civil
+A00002,Idrissi,Ahmed,ahmed.idrissi@example.com,0600000002,45 Rue Atlas,Marrakech,Nettoyage,bac,maintenance,3,francais;arabe,NONE,,2022-06-15,1.70,70,civil
+A00003,Benjelloun,Fatima,fatima.benjelloun@example.com,0600000003,78 Boulevard Mohammed V,Tanger,Jardinage,lycee,agriculture,2,francais;arabe,B,2021-03-15,2023-02-01,1.65,65,civil
+A00004,El Amrani,Youssef,youssef.elamrani@example.com,0600000004,90 Rue des FAR,Agadir,Sécurité,bac_plus_3,securite,7,francais;arabe;anglais;espagnol,C,2018-05-20,2022-01-10,1.85,85,ex_militaire
+A00005,Ouazzani,Samira,samira.ouazzani@example.com,0600000005,34 Avenue Hassan II,Fès,Maintenance,bac_plus_2,maintenance,4,francais;arabe;anglais,BE,2019-11-30,2022-08-22,1.68,63,civil
+A00006,El Khattabi,Rachid,rachid.khattabi@example.com,0600000010,56 Rue Al Wahda,Meknès,Sécurité,primaire,securite,15,francais;arabe,D,2010-03-15,2020-05-01,1.90,90,ex_militaire
+A00007,Ziani,Amal,amal.ziani@example.com,0600000011,123 Avenue des FAR,Oujda,Nettoyage,college,hotellerie,1,francais;arabe,NONE,,2023-01-15,1.62,58,civil
+A00008,Bennani,Kamal,kamal.bennani@example.com,0600000012,45 Rue Mohammed VI,Tétouan,Gardiennage,bac_plus_1,securite,4,francais;arabe;anglais,A,2019-07-22,2021-09-01,1.72,68,civil
+A00009,El Hassani,Naima,naima.hassani@example.com,0600000013,78 Boulevard Hassan II,Kenitra,Jardinage,bac_plus_4,agriculture,8,francais;arabe;anglais;amazigh,BE,2016-11-05,2022-03-15,1.67,61,civil
+A00010,Alaoui,Hamid,hamid.alaoui@example.com,0600000014,90 Rue Ibn Sina,Salé,Maintenance,bac_plus_2,maintenance,6,francais;arabe;anglais,C,2017-08-30,2021-12-01,1.83,82,ex_militaire 

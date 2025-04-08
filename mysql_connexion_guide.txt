@@ -1,0 +1,81 @@
+# Guide de résolution des problèmes de connexion MySQL dans AgentExtra
+
+## Problème actuel
+L'erreur que vous rencontrez indique que l'application ne peut pas se connecter au serveur MySQL :
+"SQLSTATE[HY000] [2002] Aucune connexion n'a pu être établie car l'ordinateur cible l'a expressément refusée"
+
+## Étapes de résolution
+
+### 1. Vérifier que le service MySQL est démarré
+La cause la plus probable de cette erreur est que le service MySQL n'est pas démarré.
+
+**Pour démarrer MySQL dans XAMPP :**
+1. Ouvrez XAMPP Control Panel (cherchez "XAMPP Control Panel" dans le menu Démarrer)
+2. Dans la ligne MySQL, cliquez sur le bouton "Start"
+3. Vérifiez que la colonne "Module" indique "Running" pour MySQL
+4. Si MySQL ne démarre pas, vérifiez le journal d'erreurs (logs)
+
+### 2. Exécuter le script de diagnostic
+Un script de diagnostic a été créé pour vous aider à identifier les problèmes :
+
+1. Ouvrez une invite de commande (cmd)
+2. Naviguez vers votre répertoire de projet :
+   ```
+   cd C:\xampp\htdocs\agentextra
+   ```
+3. Exécutez le script de diagnostic :
+   ```
+   php check_mysql.php
+   ```
+4. Suivez les recommandations du script
+
+### 3. Vérifier la configuration MySQL
+
+**Si MySQL est démarré mais vous avez toujours l'erreur :**
+1. Vérifiez que MySQL écoute sur le port 3306 :
+   - Ouvrez une invite de commande
+   - Tapez : `netstat -an | findstr 3306`
+   - Vous devriez voir une ligne contenant "LISTENING" sur le port 3306
+
+2. Vérifiez que le pare-feu Windows n'empêche pas les connexions :
+   - Ouvrez le Pare-feu Windows (dans le Panneau de configuration)
+   - Vérifiez les règles de trafic entrant
+   - Assurez-vous que MySQL est autorisé (ou temporairement désactivez le pare-feu pour tester)
+
+### 4. Vérifier les paramètres de connexion
+Assurez-vous que les paramètres de connexion sont corrects :
+
+- Host : `localhost` (ou `127.0.0.1`)
+- Port : `3306`
+- Utilisateur : `root` (par défaut dans XAMPP)
+- Mot de passe : `` (vide par défaut dans XAMPP)
+- Base de données : `agentextra`
+
+### 5. Solutions en cas de problèmes persistants
+
+**Si MySQL ne démarre pas :**
+1. Vérifiez le journal d'erreurs MySQL : `C:\xampp\mysql\data\mysql_error.log`
+2. Assurez-vous qu'aucun autre processus MySQL n'est en cours d'exécution
+3. Redémarrez complètement XAMPP (arrêtez tous les services, puis redémarrez XAMPP)
+4. Dans des cas extrêmes, vous pourriez avoir besoin de réinitialiser MySQL :
+   ```
+   cd C:\xampp\mysql\bin
+   mysqld --console --skip-grant-tables --skip-networking
+   ```
+
+**Si vous ne pouvez pas résoudre le problème :**
+1. Consultez la documentation XAMPP : https://www.apachefriends.org/faq_windows.html
+2. Consultez les forums de support XAMPP
+3. Vérifiez si une réinstallation de XAMPP est nécessaire
+
+## Comment tester rapidement si MySQL fonctionne
+
+Pour vérifier rapidement si MySQL est accessible :
+1. Ouvrez un navigateur
+2. Accédez à : http://localhost/phpmyadmin/
+3. Si phpMyAdmin s'ouvre et vous pouvez vous connecter, MySQL fonctionne correctement
+
+## Remarques importantes
+- Après avoir démarré MySQL, attendez quelques secondes avant de tester la connexion
+- Si vous modifiez la configuration MySQL, redémarrez le service
+- Assurez-vous de disposer des privilèges administrateur pour démarrer/arrêter les services 

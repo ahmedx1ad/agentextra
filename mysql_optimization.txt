@@ -1,0 +1,66 @@
+# Optimisations MySQL pour éviter l'erreur "MySQL server has gone away"
+
+## Problème
+L'erreur "MySQL server has gone away" (SQLSTATE[HY000] [2006]) peut survenir pour plusieurs raisons :
+1. Timeout de la connexion (la connexion reste inactive trop longtemps)
+2. Paquets trop volumineux excédant la limite max_allowed_packet
+3. Problèmes de réseau ou redémarrage du serveur MySQL
+4. Requêtes trop longues dépassant wait_timeout
+
+## Modifications dans le fichier my.ini ou my.cnf
+
+Ajoutez ou modifiez les paramètres suivants dans votre fichier de configuration MySQL :
+
+```ini
+[mysqld]
+# Augmenter la taille maximale des paquets (pour les requêtes volumineuses)
+max_allowed_packet = 16M
+
+# Augmenter les délais d'attente
+wait_timeout = 600
+interactive_timeout = 600
+net_read_timeout = 120
+net_write_timeout = 120
+
+# Réduire le nombre de connexions inactives
+max_connections = 300
+thread_cache_size = 16
+
+# Optimiser les performances
+innodb_buffer_pool_size = 256M
+```
+
+## Modifications côté application PHP (déjà implémentées)
+
+Nous avons modifié la classe DB.php pour :
+1. Vérifier l'état de la connexion avant chaque requête
+2. Tenter une reconnexion automatique en cas de perte de connexion
+3. Implémenter un mécanisme de réessai pour les requêtes échouées
+4. Augmenter les timeouts de session MySQL via des commandes SET SESSION
+
+## Optimisations des requêtes
+
+1. Utilisez des requêtes paginées pour limiter la taille des résultats
+2. Évitez les requêtes qui renvoient un très grand nombre de lignes
+3. Utilisez des INDEX pour accélérer les requêtes
+
+## Configuration de XAMPP (Windows)
+
+Si vous utilisez XAMPP, le fichier de configuration MySQL se trouve généralement à :
+C:\xampp\mysql\bin\my.ini
+
+Après modification, redémarrez le service MySQL.
+
+## Utilisation de phpMyAdmin pour vérifier les variables
+
+Vous pouvez vérifier les valeurs actuelles des variables avec la requête :
+```sql
+SHOW VARIABLES LIKE 'max_allowed_packet';
+SHOW VARIABLES LIKE '%timeout%';
+SHOW VARIABLES LIKE 'max_connections';
+```
+
+## Notes supplémentaires
+
+- Si vous avez des opérations longues, envisagez de les exécuter de façon asynchrone
+- Surveillez les logs MySQL pour détecter d'autres problèmes : C:\xampp\mysql\data\mysql_error.log 

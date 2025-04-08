@@ -1,0 +1,12 @@
+# Format des champs : Matricule (généré auto), Nom (texte), Prénom (texte), Email (valide), Téléphone (10 chiffres), Adresse (texte), Ville (liste), Service (existant), Niveau Scolaire (bac_plus_2 minimum), Domaine études (liste), Expérience (années), Langues (séparées par ;), Permis (A/B/C/D/BE/NONE), Date Permis (YYYY-MM-DD), Date Recrutement (YYYY-MM-DD), Taille (m.cc), Poids (kg), Statut Militaire (civil/ex_militaire)
+Matricule,Nom,Prénom,Email,Téléphone,Adresse,Ville,Service,Niveau Scolaire,Domaine d'études,Années d'expérience,Langues,Type Permis,Date Permis,Date Recrutement,Taille,Poids,Statut Militaire
+R00001,Benani,Karim,karim.benani@example.com,0600000001,456 Avenue Hassan II,Rabat,Direction,bac_plus_5,gestion,10,francais;arabe;anglais;espagnol,B,2020-01-01,2023-01-01,1.80,80,ex_militaire
+R00002,El Fassi,Nadia,nadia.elfassi@example.com,0600000006,23 Rue Ibn Sina,Casablanca,Sécurité,bac_plus_4,securite,8,francais;arabe;anglais,B,2019-04-12,2022-03-15,1.70,65,civil
+R00003,Chraibi,Hassan,hassan.chraibi@example.com,0600000007,67 Boulevard Zerktouni,Marrakech,Maintenance,bac_plus_5,informatique,12,francais;arabe;anglais;allemand,BE,2015-08-25,2021-11-30,1.82,78,ex_militaire
+R00004,Tahiri,Leila,leila.tahiri@example.com,0600000008,89 Avenue Mohammed VI,Tanger,Nettoyage,bac_plus_3,gestion,6,francais;arabe;espagnol,B,2021-02-18,2023-01-05,1.65,60,civil
+R00005,El Mansouri,Omar,omar.elmansouri@example.com,0600000009,12 Rue Al Qods,Fès,Jardinage,bac_plus_4,agriculture,9,francais;arabe;anglais,C,2017-06-30,2022-04-20,1.78,75,ex_militaire
+R00006,Lahlou,Meryem,meryem.lahlou@example.com,0600000015,34 Rue Al Massira,Meknès,Direction,bac_plus_5,gestion,15,francais;arabe;anglais;espagnol;allemand,BE,2012-09-10,2020-06-15,1.73,67,civil
+R00007,El Amiri,Younes,younes.elamiri@example.com,0600000016,56 Avenue des FAR,Oujda,Sécurité,bac_plus_4,securite,11,francais;arabe;anglais;amazigh,C,2014-05-20,2021-08-01,1.85,88,ex_militaire
+R00008,Bennani,Sofia,sofia.bennani@example.com,0600000017,78 Boulevard Al Qods,Tétouan,Maintenance,bac_plus_5,informatique,13,francais;arabe;anglais;espagnol,B,2013-11-15,2022-01-10,1.68,62,civil
+R00009,El Idrissi,Amine,amine.elidrissi@example.com,0600000018,90 Rue Mohammed V,Kenitra,Direction,bac_plus_5,gestion,14,francais;arabe;anglais;espagnol;italien,BE,2011-07-25,2021-03-20,1.81,83,ex_militaire
+R00010,Tazi,Houda,houda.tazi@example.com,0600000019,123 Avenue Hassan II,Salé,Nettoyage,bac_plus_3,gestion,7,francais;arabe;anglais,B,2018-03-30,2022-09-05,1.69,64,civil 
